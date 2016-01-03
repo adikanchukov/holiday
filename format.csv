@@ -1,0 +1,22 @@
+Format description:
+
+<name>;<version>;<year>
+<description>
+<date>;<name>
+<date>;<name>
+...
+
+name: text
+version: x
+year: YYYY
+description: text
+
+date: MMDD
+name: text
+
+Example:
+
+RU;1;2016
+Russian holiday package
+0101;New Year's Day
+
