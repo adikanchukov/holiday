@@ -11,7 +11,7 @@ version: x
 year: YYYY
 description: text
 
-date: MMDD
+date: ddMM
 name: text
 
 Example:
