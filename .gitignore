@@ -1,6 +1,7 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-.debug
+.build
+*.txt.user
 *.pro.user
 *~
 *.autosave
