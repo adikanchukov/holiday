@@ -3,26 +3,26 @@
 ##General
 Text file with the same structure as below:
 
-\<name\>;\<year\>
+*\<name\>;\<year\>*
 
-\<description\>
+*\<description\>*
 
-\<date\>;\<name\>
+*\<date\>;\<name\>*
 
-\<date\>;\<name\>
+*\<date\>;\<name\>*
 
 ...
 
 ##Field formats
-**name**: *text* (GER)  
+**name**: *text*
 
-**year**: *YYYY* (2016)
+**year**: *YYYY*
 
-**description**: *text* (German holiday package)
+**description**: *text*
 
-**date**: *ddMM* (0101 (=1 January))
+**date**: *ddMM*
 
-**name**: *text* (New Year's Day)
+**name**: *text*
 
 ##Example
 
