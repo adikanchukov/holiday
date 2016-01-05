@@ -1,21 +1,34 @@
-Format description:
+#Package format
 
-<name>;<year>
-<description>
-<date>;<name>
-<date>;<name>
+##General
+Text file with the same structure as below:
+
+\<name\>;\<year\>
+
+\<description\>
+
+\<date\>;\<name\>
+
+\<date\>;\<name\>
+
 ...
 
-name: text
-year: YYYY
-description: text
+##Field formats
+**name**: *text* (GER)  
 
-date: ddMM
-name: text
+**year**: *YYYY* (2016)
 
-Example:
+**description**: *text* (German holiday package)
 
-RU;2016
-Russian holiday package
+**date**: *ddMM* (0101 (=1 January))
+
+**name**: *text* (New Year's Day)
+
+##Example
+
+GER;2016
+
+German holiday package
+
 0101;New Year's Day
 
