@@ -17,6 +17,8 @@ public:
 
     void showPackageList();
 
+    void showUpcomingHoliday();
+
 private:
 
     static QString textColor();

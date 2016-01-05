@@ -4,6 +4,8 @@
 #include <QDir>
 #include <QFileInfo>
 
+#include <limits>
+
 HolidayPackageManager::HolidayPackageManager()
 {
 }
@@ -42,4 +44,22 @@ int HolidayPackageManager::packagesCount() const
 HolidayPackageManager::HolidayPackages HolidayPackageManager::getPackages() const
 {
     return packages;
+}
+
+const Holiday HolidayPackageManager::upcomingHoliday(bool *ok) const
+{
+    *ok = false;
+    Holiday result(QDate(std::numeric_limits<int>::max(), 12, 31), QString());
+
+    foreach (const HolidayPackage& package, packages)
+        foreach (const Holiday& holiday , package.getHolidays()) {
+            const QDate& holidayDate = holiday.getDate();
+            if (holidayDate >= QDate::currentDate() && holidayDate < result.getDate())
+            {
+                *ok = true;
+                result = holiday;
+            }
+        }
+
+    return result;
 }

@@ -36,18 +36,10 @@ int main(int argc, char *argv[])
     outputer.endLoadingPackages(packagesLoaded);
 
     if (packagesLoaded)
+    {
         if (parser.isSet(packageListOption))
             outputer.showPackageList();
-
-    //    QTextStream stream(stdout);
-    //    QDate const & currentDate = QDate::currentDate();
-
-    //    stream << "Today is "  << displayColoredText(currentDate.toString("dddd, d MMMM yyyy")) <<
-    //           " (" << currentDate.dayOfYear() << " day of the year)\n";
-
-    //    Holiday const holiday = upcomingHoliday();
-    //    QDate const & holidayDate = holiday.date();
-
-    //    stream << "There are " << displayColoredText(printDays(currentDate.daysTo(holidayDate))) << " until next holiday\n\n";
-    //    stream << "Upcoming holiday is " << displayColoredText(holiday.title()) << " (" << holidayDate.toString("d MMMM") << ")\n";
+        else
+            outputer.showUpcomingHoliday();
+    }
 }

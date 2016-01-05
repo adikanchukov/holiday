@@ -16,6 +16,8 @@ public:
 
     HolidayPackages getPackages() const;
 
+    const Holiday upcomingHoliday(bool *ok) const;
+
 private:
     HolidayPackages packages;
 };

@@ -38,6 +38,32 @@ void HolidayOutputer::showPackageList()
     }
 }
 
+void HolidayOutputer::showUpcomingHoliday()
+{
+    stream << "\nToday is "  << makeTextColored(QDate::currentDate().toString("dddd, d MMMM yyyy")) <<
+               " (" << QDate::currentDate().dayOfYear() << " day of the year).";
+
+    bool ok = false;
+    const Holiday holiday = manager->upcomingHoliday(&ok);
+    int const daysLeft = QDate::currentDate().daysTo(holiday.getDate());
+
+    if (!ok)
+        stream << "\nNo upcoming holiday that i know.\n";
+    else
+    {
+        QString const holidayName = holiday.getName();
+        QString const holidayDateFormat = holiday.getDate().year() == QDate::currentDate().year() ? "d MMMM" : "d MMMM yyyy";
+        QString const holidayInfoText = " left until " + makeTextColored(holidayName) +
+                                        " (" + holiday.getDate().toString(holidayDateFormat) + ").";
+        if (daysLeft == 0)
+            stream << makeTextColored("Today") << " is " << makeTextColored(holidayName) << "!\n";
+        else if (daysLeft == 1)
+            stream << "\nThere is " << makeTextColored("1 day") << holidayInfoText << "\n";
+        else
+            stream << "\nThere are " << makeTextColored(QString::number(daysLeft) +  " days") << holidayInfoText << "\n";
+    }
+}
+
 QString HolidayOutputer::textColor()
 {
     static QString color;
