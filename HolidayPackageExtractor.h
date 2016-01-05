@@ -10,7 +10,6 @@ class HolidayPackageExtractor
     enum class Header
     {
         Name,
-        Version,
         Year,
         Count
     };

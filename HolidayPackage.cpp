@@ -4,8 +4,8 @@ HolidayPackage::HolidayPackage()
 {
 }
 
-HolidayPackage::HolidayPackage(const QString &name, size_t version, size_t year, const QString &description,
-                               const HolidayPackage::Holidays &holidays) : name(name), version(version), year(year), description(description),
+HolidayPackage::HolidayPackage(const QString &name, size_t year, const QString &description,
+                               const HolidayPackage::Holidays &holidays) : name(name), year(year), description(description),
     holidays(holidays)
 {
 
@@ -14,11 +14,6 @@ HolidayPackage::HolidayPackage(const QString &name, size_t version, size_t year,
 QString HolidayPackage::getName() const
 {
     return name;
-}
-
-size_t HolidayPackage::getVersion() const
-{
-    return version;
 }
 
 size_t HolidayPackage::getYear() const
@@ -44,11 +39,6 @@ int HolidayPackage::getHolidaysCount() const
 void HolidayPackage::setName(const QString &value)
 {
     name = value;
-}
-
-void HolidayPackage::setVersion(const size_t &value)
-{
-    version = value;
 }
 
 void HolidayPackage::setYear(const size_t &value)

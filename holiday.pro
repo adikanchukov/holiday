@@ -13,13 +13,15 @@ SOURCES += main.cpp \
     HolidayPackageManager.cpp \
     Holiday.cpp \
     HolidayPackage.cpp \
-    HolidayPackageExtractor.cpp
+    HolidayPackageExtractor.cpp \
+    HolidayOutputer.cpp
 
 HEADERS += \
     HolidayPackageManager.h \
     Holiday.h \
     HolidayPackage.h \
-    HolidayPackageExtractor.h
+    HolidayPackageExtractor.h \
+    HolidayOutputer.h
 
 DISTFILES += \
     format.csv \

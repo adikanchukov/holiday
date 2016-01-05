@@ -27,7 +27,6 @@ HolidayPackage HolidayPackageExtractor::extract(const QFileInfo &packageFileInfo
     }
 
     result.setName(packageHeader.at(static_cast<int>(Header::Name)));
-    result.setVersion(packageHeader.at(static_cast<int>(Header::Version)).toInt());
     result.setYear(packageHeader.at(static_cast<int>(Header::Year)).toInt());
     result.setDescription(packageStream.readLine());
 
