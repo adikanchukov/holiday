@@ -1,6 +1,9 @@
 #Holiday
 Console application for obtaining information about upcoming holidays.
 
+![alt tag](http://i.imgur.com/7dOJPJS.jpg?1)
+
+
 ##Build Requires
 * C++ 11-compatible compiler
 * CMake >= 2.8.8
@@ -12,7 +15,11 @@ Console application for obtaining information about upcoming holidays.
 3. Place */packages* directory near the executable file or set the path manually with the *-p* or *--packageDir* option.
 
 ##Installation
-*Will be added later...*
+The default installation directory is */usr/local/*.
+
+You can specify your installation path by running *cmake -DCMAKE_INSTALL_PREFIX=...*.
+
+Then *sudo make install*.
 
 ##Usage
 Just run it!
@@ -25,4 +32,3 @@ You can create your own holiday packages.
 Some examples in */packages* directory.
 
 See *README* at the same place for more details.
-
