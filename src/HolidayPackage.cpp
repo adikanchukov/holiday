@@ -4,11 +4,16 @@ HolidayPackage::HolidayPackage()
 {
 }
 
-HolidayPackage::HolidayPackage(const QString &name, size_t year, const QString &description,
-                               const HolidayPackage::Holidays &holidays) : name(name), year(year), description(description),
+HolidayPackage::HolidayPackage(const QString &fileName, const QString &name, size_t year, const QString &description,
+                               const HolidayPackage::Holidays &holidays) : fileName(fileName), name(name), year(year), description(description),
     holidays(holidays)
 {
 
+}
+
+QString HolidayPackage::getFileName() const
+{
+    return fileName;
 }
 
 QString HolidayPackage::getName() const
@@ -34,6 +39,11 @@ HolidayPackage::Holidays HolidayPackage::getHolidays() const
 int HolidayPackage::getHolidaysCount() const
 {
     return holidays.count();
+}
+
+void HolidayPackage::setFileName(const QString &value)
+{
+    fileName = value;
 }
 
 void HolidayPackage::setName(const QString &value)

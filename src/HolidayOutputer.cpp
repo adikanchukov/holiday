@@ -49,10 +49,12 @@ void HolidayOutputer::endLoadingPackages(HolidayPackageManager::LoadPackagesStat
 
 void HolidayOutputer::showPackageList()
 {
-    stream << "\nList of packages: \n";
+    stream << "\nList of packages:\n";
     foreach (const HolidayPackage &package, manager->getPackages())
     {
+        stream << "___________________\n";
         stream << "\n" << makeTextColored(package.getName() + " package");
+        stream << "\nFilename: " << package.getFileName();
         stream << "\nYear: " << package.getYear();
         stream << "\nDescription: " << package.getDescription();
         stream << "\nHolidays count: " << package.getHolidaysCount() << "\n";

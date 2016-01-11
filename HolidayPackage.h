@@ -13,7 +13,9 @@ public:
     typedef QVector<Holiday> Holidays;
 
     explicit HolidayPackage();
-    explicit HolidayPackage(const QString &name, size_t year, const QString &description, const Holidays &holidays);
+    explicit HolidayPackage(const QString &fileName, const QString &name, size_t year, const QString &description, const Holidays &holidays);
+
+    QString getFileName() const;
 
     QString getName() const;
 
@@ -25,6 +27,8 @@ public:
 
     int getHolidaysCount() const;
 
+    void setFileName(const QString &value);
+
     void setName(const QString &value);
 
     void setYear(const size_t &value);
@@ -34,6 +38,7 @@ public:
     void setHolidays(const Holidays &value);
 
 private:
+    QString fileName;
     QString name;
     size_t year;
     QString description;
