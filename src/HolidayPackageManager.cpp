@@ -10,15 +10,15 @@ HolidayPackageManager::HolidayPackageManager()
 {
 }
 
-bool HolidayPackageManager::loadPackages(const QString &packageDirPath)
+HolidayPackageManager::LoadPackagesStatus HolidayPackageManager::loadPackages(const QString &packageDirPath)
 {
     if (!QFileInfo::exists(packageDirPath))
-        return false;
+        return NOT_EXISTS_DIRECTORY;
 
     QFileInfo packageDirInfo(packageDirPath);
 
     if (!packageDirInfo.isDir() || !packageDirInfo.isReadable())
-        return false;
+        return INVALID_DIRECTORY;
 
     QDir packageDir(packageDirPath);
 
@@ -33,7 +33,10 @@ bool HolidayPackageManager::loadPackages(const QString &packageDirPath)
             packages.push_back(package);
     }
 
-    return !packages.isEmpty();
+    if (packages.isEmpty())
+        return NO_PACKAGES;
+    else
+        return OK;
 }
 
 int HolidayPackageManager::packagesCount() const

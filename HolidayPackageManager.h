@@ -6,11 +6,20 @@
 class HolidayPackageManager
 {
 public:
+
+    enum LoadPackagesStatus
+    {
+        OK,
+        NOT_EXISTS_DIRECTORY,
+        INVALID_DIRECTORY,
+        NO_PACKAGES
+    };
+
     typedef QVector<HolidayPackage> HolidayPackages;
 
     explicit HolidayPackageManager();
 
-    bool loadPackages(const QString &packageDirPath);
+    LoadPackagesStatus loadPackages(const QString &packageDirPath);
 
     int packagesCount() const;
 

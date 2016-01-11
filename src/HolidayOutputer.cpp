@@ -12,18 +12,38 @@ void HolidayOutputer::beginLoadingPackages()
     stream << "Loading packages... ";
 }
 
-void HolidayOutputer::endLoadingPackages(bool succeed)
+void HolidayOutputer::endLoadingPackages(HolidayPackageManager::LoadPackagesStatus status)
 {
-    if (succeed)
+    switch(status)
+    {
+    case HolidayPackageManager::OK:
     {
         stream << "Done!\n";
         int const packagesCount = manager->packagesCount();
         stream << packagesCount << " ";
         packagesCount == 1 ? stream << "package was loaded.\n" : stream << "packages were loaded.\n";
     }
-    else
-        stream << "Failed!\n";
-
+    case HolidayPackageManager::NOT_EXISTS_DIRECTORY:
+    {
+        stream << "Failed!\nSpecified package directory does not exists.\n";
+        break;
+    }
+    case HolidayPackageManager::INVALID_DIRECTORY:
+    {
+        stream << "Failed!\nSpecified package directory is invalid.\n";
+        break;
+    }
+    case HolidayPackageManager::NO_PACKAGES:
+    {
+        stream << "Failed!\nThere are no packages in the specified package directory.\n";
+        break;
+    }
+    default:
+    {
+        stream << "\nUnexpected status, please contact developers.\n";
+        break;
+    }
+    }
 }
 
 void HolidayOutputer::showPackageList()

@@ -13,7 +13,7 @@ public:
 
     void beginLoadingPackages();
 
-    void endLoadingPackages(bool succeed);
+    void endLoadingPackages(HolidayPackageManager::LoadPackagesStatus status);
 
     void showPackageList();
 

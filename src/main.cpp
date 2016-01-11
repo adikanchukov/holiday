@@ -31,11 +31,12 @@ int main(int argc, char *argv[])
 
     QString const packageDir = parser.value(packageDirOption).isEmpty() ? QDir::currentPath() +
                                                                           "/packages" : parser.value(packageDirOption);
-    bool const packagesLoaded = manager->loadPackages(packageDir);
+
+    HolidayPackageManager::LoadPackagesStatus const packagesLoaded = manager->loadPackages(packageDir);
 
     outputer.endLoadingPackages(packagesLoaded);
 
-    if (packagesLoaded)
+    if (packagesLoaded == HolidayPackageManager::OK)
     {
         if (parser.isSet(packageListOption))
             outputer.showPackageList();

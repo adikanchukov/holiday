@@ -21,8 +21,3 @@ target_link_libraries(${PROJECT_NAME} Qt5::Core)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/packages DESTINATION lib/${PROJECT_NAME})
-
-
-
-
-
