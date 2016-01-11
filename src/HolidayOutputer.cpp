@@ -22,6 +22,7 @@ void HolidayOutputer::endLoadingPackages(HolidayPackageManager::LoadPackagesStat
         int const packagesCount = manager->packagesCount();
         stream << packagesCount << " ";
         packagesCount == 1 ? stream << "package was loaded.\n" : stream << "packages were loaded.\n";
+        break;
     }
     case HolidayPackageManager::NOT_EXISTS_DIRECTORY:
     {
