@@ -11,7 +11,7 @@ class HolidayOutputer
 public:
     explicit HolidayOutputer(const QSharedPointer<HolidayPackageManager> manager);
 
-    void beginLoadingPackages();
+    void beginLoadingPackages(QString const & packageDir);
 
     void endLoadingPackages(HolidayPackageManager::LoadPackagesStatus status);
 

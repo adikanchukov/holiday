@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
     QSharedPointer<HolidayPackageManager> manager(new HolidayPackageManager());
     HolidayOutputer outputer(manager);
 
-    outputer.beginLoadingPackages();
-
     QString const packageDir = parser.value(packageDirOption).isEmpty() ? QDir::currentPath() +
                                                                           "/packages" : parser.value(packageDirOption);
+
+    outputer.beginLoadingPackages(packageDir);
 
     HolidayPackageManager::LoadPackagesStatus const packagesLoaded = manager->loadPackages(packageDir);
 

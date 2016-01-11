@@ -7,9 +7,9 @@ HolidayOutputer::HolidayOutputer(const QSharedPointer<HolidayPackageManager> man
 
 }
 
-void HolidayOutputer::beginLoadingPackages()
+void HolidayOutputer::beginLoadingPackages(const QString &packageDir)
 {
-    stream << "Loading packages... ";
+    stream << "Loading packages from " + makeTextColored(packageDir) + "... ";
 }
 
 void HolidayOutputer::endLoadingPackages(HolidayPackageManager::LoadPackagesStatus status)
