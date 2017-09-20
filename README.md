@@ -14,7 +14,7 @@ Console application for obtaining information about upcoming holidays.
 2. Run *cmake && make*.
 3. Place */packages* directory near the executable file or set the path manually with the *-p* or *--packageDir* option.
 
-##Installation
+## Installation
 The default installation directory is */usr/local/*.
 
 You can specify your installation path by running *cmake -DCMAKE_INSTALL_PREFIX=...*.
